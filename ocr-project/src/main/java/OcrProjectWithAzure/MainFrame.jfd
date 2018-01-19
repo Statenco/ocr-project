@@ -1,0 +1,167 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :::p, comp subscriptionKeyLabel:::p::p, space :::p, comp subscriptionKeyTextField:::::x, space u:::p, comp subscriptionTextRegionLabel:::p::p, space :p::p, comp subscriptionRegionComboBox:::p:115:p}, seq l {comp tabbedPane:::::x, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp tabbedPane:::::x, space :p:12:p, par b {comp subscriptionKeyLabel::b:p::p, comp subscriptionTextRegionLabel::b:p::p, comp subscriptionRegionComboBox::b:p::p, comp subscriptionKeyTextField::b:p::p}, space :p:24:p}}"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			"minimumSize": new java.awt.Dimension( 960, 600 )
+			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+				name: "tabbedPane"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq {space :::p, par l {seq l {par l {comp ocrScrollPane::l:p:400:p, comp ocrResponseLabel::l:p::p}, space u:::p, par l {comp ocrSourceImageLabel:::p::p, comp ocrImage:::::x}}, seq {par l {seq l {comp ocrImagePromptLabel:::p::p, space :::p, comp ocrImageUriTextBox:::p:240:p, space :::p, comp ocrImageButton:::p::p, space :::p, comp openButtonFile:::p:69:p, space :::p, comp inputFileChooser:::p::p}, seq l {par l {comp ocrTitleLabel:::p::p, comp ocrInstructionLabel:::p::p}, space s:::p, par l:::p {comp languageSelectorComboBox::::250:x, comp laguageSelectorTextLable::::250:x}}}, space :0:202:x}}, space :::p}}"
+					"$verticalGroup": "par l {seq l {space :::p, par b {comp ocrTitleLabel::b:p::p, comp laguageSelectorTextLable::b:p::p}, space u:::p, par l:::p {comp languageSelectorComboBox::::27:x, comp ocrInstructionLabel::::27:x}, space u:::p, par l:::p {comp inputFileChooser:::::x, par b {comp ocrImagePromptLabel::b:p::p, comp ocrImageUriTextBox::b:p::p, comp ocrImageButton::b:p::p, comp openButtonFile::b:p::p}}, space :::p, par b {comp ocrResponseLabel::b:p::p, comp ocrSourceImageLabel::b:p::p}, space :::p, par l {comp ocrImage:::::x, comp ocrScrollPane::::251:x}, space :::p}}"
+				} ) {
+					name: "ocrPanel"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "ocrTitleLabel"
+						"font": new java.awt.Font( "Tahoma", 1, 14 )
+						"text": "Optical Character Recognition (OCR):"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "ocrInstructionLabel"
+						"text": "Enter the URL or location to an image of printed text, then click the \"Read Image\" button."
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "ocrImagePromptLabel"
+						"text": "Image to read:"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "ocrImageUriTextBox"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "ocrImageButton"
+						"text": "Read Image"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "ocrImageButtonActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "ocrResponseLabel"
+						"text": "Response:"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "ocrSourceImageLabel"
+						"text": "Source image:"
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "ocrScrollPane"
+						add( new FormComponent( "javax.swing.JTextArea" ) {
+							name: "ocrResponseTextArea"
+							"editable": false
+							"columns": 20
+							"rows": 5
+						} )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "ocrImage"
+					} )
+					add( new FormComponent( "javax.swing.JComboBox" ) {
+						name: "languageSelectorComboBox"
+						"selectedIndex": -1
+						"model": new javax.swing.DefaultComboBoxModel {
+							selectedItem: ""
+							addElement( "ro" )
+							addElement( "unk" )
+						}
+						"toolTipText": "ro- Romanian;\nunk - Auto-Detect language"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "openButtonFile"
+						"text": "Open"
+					} )
+					add( new FormComponent( "javax.swing.JComboBox" ) {
+						name: "inputFileChooser"
+						"model": new javax.swing.DefaultComboBoxModel {
+							selectedItem: "application/octet-stream"
+							addElement( "application/octet-stream" )
+							addElement( "application/json" )
+						}
+						"toolTipText": "Application/octet-stream -> Select file from local source;\n\nApplication/json -> Select file from URL;"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "laguageSelectorTextLable"
+						"text": "Language selector"
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "OCR"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq {space :::p, par l {seq {par l {comp handwritingTitleLabel::l:p::p, comp handwritingInstructionLabel::l:p::p, seq l {comp handwritingImagePromptLabel:::p::p, space :::p, comp handwritingImageUriTextBox:::p:240:p, space :::p, comp handwritingImageButton:::p::p}}, space :0:0:x}, seq l {par l {comp handwritingScrollPane::l:p:400:p, comp handwritingResponseLabel::l:p::p}, space u:::p, par l {comp handwritingSourceImageLabel:::p::p, comp handwritingImage:::::x}}}, space :::p}}"
+					"$verticalGroup": "par l {seq l {space :::p, comp handwritingTitleLabel:::p::p, space :::p, comp handwritingInstructionLabel:::p::p, space u:::p, par b {comp handwritingImagePromptLabel::b:p::p, comp handwritingImageUriTextBox::b:p::p, comp handwritingImageButton::b:p::p}, space :::p, par b {comp handwritingResponseLabel::b:p::p, comp handwritingSourceImageLabel::b:p::p}, space :::p, par l {comp handwritingImage:::::x, comp handwritingScrollPane::::268:x}, space :::p}}"
+				} ) {
+					name: "handwritingPanel"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "handwritingTitleLabel"
+						"font": new java.awt.Font( "Tahoma", 1, 14 )
+						"text": "Read handwritten text:"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "handwritingInstructionLabel"
+						"text": "Enter the URL to an image of handwritten text, then click the \"Read Image\" button."
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "handwritingImagePromptLabel"
+						"text": "Image to read:"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "handwritingImageUriTextBox"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "handwritingImageButton"
+						"text": "Read Image"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "handwritingImageButtonActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "handwritingResponseLabel"
+						"text": "Response:"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "handwritingSourceImageLabel"
+						"text": "Source image:"
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "handwritingScrollPane"
+						add( new FormComponent( "javax.swing.JTextArea" ) {
+							name: "handwritingResponseTextArea"
+							"editable": false
+							"columns": 20
+							"rows": 5
+						} )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "handwritingImage"
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "Read Handwritten Text"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "subscriptionKeyLabel"
+				"text": "Subscription Key:"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "subscriptionTextRegionLabel"
+				"text": "Subscription Region:"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "subscriptionRegionComboBox"
+				"model": new javax.swing.DefaultComboBoxModel {
+					selectedItem: "westeurope"
+					addElement( "westeurope" )
+				}
+				auxiliary() {
+					"JavaCodeGenerator.typeParameters": "String"
+				}
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "subscriptionKeyTextField"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"size": new java.awt.Dimension( 960, 515 )
+			"location": new java.awt.Point( 15, 0 )
+		} )
+	}
+}
